@@ -27,4 +27,28 @@ class KotlinPassing {
 
     return result;
   }
+
+  Future<Map<dynamic, dynamic>> sendCommonMapToKotlin(
+      Map<String, dynamic> map) async {
+    var result = await platform.invokeMethod(
+      'invokeMethod_PassingMap',
+      {
+        "map": map,
+      },
+    ) as Map<dynamic, dynamic>;
+
+    return result;
+  }
+
+  Future<Map<dynamic, dynamic>> send2LevelMapToKotlin(
+      Map<String, dynamic> map) async {
+    var result = await platform.invokeMethod(
+      'invokeMethod_PassingMap',
+      {
+        "map": map,
+      },
+    ) as Map<dynamic, dynamic>;
+
+    return result;
+  }
 }

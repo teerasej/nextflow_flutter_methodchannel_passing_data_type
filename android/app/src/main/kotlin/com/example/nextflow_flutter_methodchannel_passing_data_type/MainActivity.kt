@@ -1,5 +1,6 @@
 package com.example.nextflow_flutter_methodchannel_passing_data_type
 
+import android.util.Log
 import androidx.annotation.NonNull
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
@@ -16,6 +17,12 @@ class MainActivity: FlutterActivity() {
             // This method is invoked on the main thread.
             // TODO
             when(call.method) {
+
+                "invokeMethod_PassingMap" -> {
+                    var map:MutableMap<String,Any?>? = call.argument("map")
+                    Log.d("INFO", "int")
+                    result.success(map)
+                }
 
                 "invokeMapMethod_2ndLevel_List_WithCommonValue" -> {
                     var map = HashMap<String,Any?>()
