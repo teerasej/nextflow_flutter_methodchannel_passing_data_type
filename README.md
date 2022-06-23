@@ -1,6 +1,9 @@
 # nextflow_flutter_methodchannel_passing_data_type
 
-A new Flutter project.
+A Flutter project that do experiment about passing and retriving complex data structure to/back from Native platform 
+
+- Android (Kotlin)
+- iOS (Swift)
 
 ## Getting Started
 
