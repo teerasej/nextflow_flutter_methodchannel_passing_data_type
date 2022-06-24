@@ -121,6 +121,23 @@ void main() {
         expect(profileMap['Name'], "Silmaril");
         expect(profileMap['amount'], 85000);
       });
+
+      test(
+        'Send map to kotlin, parsed, then send back as Map',
+        () async {
+          var map = <String, dynamic>{};
+
+          map['id'] = 99;
+          map['name'] = "Hello Dart";
+          map['isUser'] = true;
+
+          var result = await lib.sendMapToKotlinConverterClass(map)
+              as Map<dynamic, dynamic>;
+          expect(result['id'], 99);
+          expect(result['name'], "Hello Dart");
+          expect(result['isUser'], true);
+        },
+      );
     },
   );
 }

@@ -51,4 +51,16 @@ class KotlinPassing {
 
     return result;
   }
+
+  Future<Map<dynamic, dynamic>> sendMapToKotlinConverterClass(
+      Map<String, dynamic> map) async {
+    var result = await platform.invokeMethod(
+      'invokeMethod_KotlinConvertClass',
+      {
+        "map": map,
+      },
+    ) as Map<dynamic, dynamic>;
+
+    return result;
+  }
 }

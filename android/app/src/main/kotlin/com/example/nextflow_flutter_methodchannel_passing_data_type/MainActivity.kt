@@ -18,6 +18,12 @@ class MainActivity: FlutterActivity() {
             // TODO
             when(call.method) {
 
+                "invokeMethod_KotlinConvertClass" -> {
+                    var map:HashMap<String,Any?>? = call.argument("map")
+                    var profile = Profile.parseMap(map!!)
+                    result.success(profile.toMap())
+                }
+
                 "invokeMethod_PassingMap" -> {
                     var map:MutableMap<String,Any?>? = call.argument("map")
                     Log.d("INFO", "int")
